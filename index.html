@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f6f1">
+  <meta name="description" content="ReFlex connects trajectory symptoms to stage-level constraint repair for ReKep-style robotic manipulation. Explore five paired MuJoCo demonstrations and their constraint specifications.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ReFlex — Feedback-Enhanced Constraint Repair">
+  <meta property="og:description" content="Five motion errors. One interface to revisit: the constraints. Explore paired robotic manipulation demonstrations and the specifications behind them.">
+  <meta property="og:image" content="assets/images/collision-released.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>ReFlex | Feedback-Enhanced Constraint Repair</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="assets/vendor/katex/katex.min.js"></script>
+  <script defer src="site-config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="wordmark" href="#main" aria-label="ReFlex home">ReFlex<span class="brand-dot"></span></a>
+      <nav aria-label="Main navigation">
+        <a href="#overview">Overview</a><a href="#demos">Demos</a><a href="#method">Method</a><a href="#resources">Resources</a>
+      </nav>
+      <a class="nav-paper" data-paper-link href="assets/paper/reflex-manuscript-zh.pdf" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container" aria-labelledby="project-title">
+      <div class="eyebrow"><span class="tiny-line"></span> Robotic manipulation · Constraint repair</div>
+      <h1 id="project-title">Re<span>Flex</span><span class="title-dot">.</span></h1>
+      <p class="paper-title">Feedback-Enhanced Constraint Repair<br class="desktop-break"> for ReKep Motion Planning</p>
+      <p class="hero-summary">When the motion is wrong, revisit the constraints.</p>
+      <p class="authors" id="authors">Shaoyi Wang</p>
+      <p class="affiliation" id="affiliation">Haerbin Institute of Technology</p>
+      <div class="hero-links">
+        <a class="button button-dark" data-paper-link href="assets/paper/reflex-manuscript-zh.pdf" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7zM14 3v5h4M10 12h5M10 16h5"/></svg><span data-paper-label>Manuscript · Chinese draft</span></a>
+        <a class="button button-light" href="#demos"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z"/></svg>Explore the demos</a>
+        <a class="button button-light" data-code-link hidden><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg>Code</a>
+      </div>
+      <div class="hero-footnote">Five error types <span>·</span> Four MuJoCo scenes <span>·</span> Paired constraint specifications</div>
+    </section>
+
+    <section class="demo-section container" id="demos" aria-labelledby="demo-heading">
+      <div class="section-heading compact-heading"><div><p class="eyebrow">Explore the specification gap</p><h2 id="demo-heading">Same task. Different constraints.</h2></div><a class="text-link" href="assets/constraint-notes.md" download>Full constraint notes <span aria-hidden="true">↓</span></a></div>
+      <div class="demo-shell">
+        <div class="case-tabs" role="tablist" aria-label="Select an error case">
+          <button id="tab-object" role="tab" aria-selected="true" aria-controls="case-panel" data-case="object" tabindex="0"><span>01</span> Object binding</button>
+          <button id="tab-region" role="tab" aria-selected="false" aria-controls="case-panel" data-case="region" tabindex="-1"><span>02</span> Functional region</button>
+          <button id="tab-direction" role="tab" aria-selected="false" aria-controls="case-panel" data-case="direction" tabindex="-1"><span>03</span> Approach direction</button>
+          <button id="tab-progress" role="tab" aria-selected="false" aria-controls="case-panel" data-case="progress" tabindex="-1"><span>04</span> Progress stagnation</button>
+          <button id="tab-collision" role="tab" aria-selected="false" aria-controls="case-panel" data-case="collision" tabindex="-1"><span>05</span> Collision risk</button>
+        </div>
+        <div id="case-panel" role="tabpanel" aria-labelledby="tab-object">
+          <div class="case-heading"><div><p class="scene-label" id="scene-label">Scene A · Object binding</p><h3 id="case-title">Grasp the apple, not the nearby pear.</h3></div><span class="tag">Authored MuJoCo demonstration</span></div>
+          <div class="video-grid">
+            <div class="video-card correct-card"><div class="video-label"><span class="status-dot"></span>Correct reference <span id="correct-action">Target: apple</span></div><video id="correct-video" controls muted playsinline preload="none" poster="assets/images/object-correct.jpg" aria-label="Correct object binding reference"><source src="assets/videos/object-correct.mp4" type="video/mp4">Your browser does not support video. <a href="assets/videos/object-correct.mp4">Download the correct video.</a></video></div>
+            <div class="video-card wrong-card"><div class="video-label"><span class="status-dot"></span>Incorrect reference <span id="wrong-action">Target: pear</span></div><video id="wrong-video" controls muted playsinline preload="none" poster="assets/images/object-wrong.jpg" aria-label="Incorrect object binding reference"><source src="assets/videos/object-wrong.mp4" type="video/mp4">Your browser does not support video. <a href="assets/videos/object-wrong.mp4">Download the incorrect video.</a></video></div>
+          </div>
+          <div class="playback-controls">
+            <button class="play-button" id="play-pair" type="button"><span id="play-icon" aria-hidden="true">▶</span><span id="play-label">Play both</span></button>
+            <button class="quiet-button" id="restart-pair" type="button">Restart</button>
+            <span class="playback-note" id="playback-note" role="status" aria-live="polite">Compare the two references on a shared timeline.</span>
+          </div>
+          <div class="constraint-grid">
+            <div class="constraint correct-constraint"><p>Correct specification <span>Subgoal</span></p><div class="math" id="correct-equation" data-tex="\|p_e(T)-k_{\mathrm{apple}}\|\leq\epsilon_p">‖pₑ(T) − kₐₚₚₗₑ‖ ≤ εₚ</div><p class="constraint-description" id="correct-description">Bind the grasp reference to the task-intended apple.</p></div>
+            <div class="constraint wrong-constraint"><p>Incorrect specification <span>Subgoal</span></p><div class="math" id="wrong-equation" data-tex="\|p_e(T)-k_{\mathrm{pear}}\|\leq\epsilon_p">‖pₑ(T) − kₚₑₐᵣ‖ ≤ εₚ</div><p class="constraint-description" id="wrong-description">Bind the reference to a distractor while the task still asks for the apple.</p></div>
+          </div>
+          <div class="repair-line"><span class="repair-icon" aria-hidden="true">↺</span><div><strong>Candidate local repair</strong><p id="repair-text">Replace the object reference. Preserve the grasp stage, gripper pose and closure requirements.</p></div></div>
+          <p class="case-detail" id="case-detail">Both motions close the gripper at the authored grasp position. This case illustrates object selection; it does not include transport or release.</p>
+        </div>
+      </div>
+      <p class="demo-caption">These videos use fixed joint keyframes and scripted object attachment. The equations are manually authored specification examples; the videos are not outputs of ReKep planning or ReFlex automatic repair.</p>
+      <noscript><p>JavaScript enables the paired controls and case selector. You can also download the <a href="assets/videos/region-correct.mp4">spatula reference</a>, <a href="assets/videos/region-wrong.mp4">spatula error</a>, <a href="assets/videos/direction-correct.mp4">button reference</a>, <a href="assets/videos/direction-wrong.mp4">button error</a>, <a href="assets/videos/progress-correct.mp4">transport reference</a>, <a href="assets/videos/progress-wrong.mp4">stagnating reference</a>, <a href="assets/videos/collision-correct.mp4">safe transport reference</a>, and <a href="assets/videos/collision-wrong.mp4">collision-risk reference</a>.</p></noscript>
+    </section>
+
+    <section class="overview section-pad" id="overview" aria-labelledby="overview-heading">
+      <div class="container overview-grid"><div><p class="eyebrow">The central question</p><h2 id="overview-heading">Is the robot solving<br>the <em>right</em> problem?</h2><p class="section-lead">Constraint solvability does not guarantee task correctness.</p></div><div class="overview-copy"><p>ReKep-style systems translate language and visual observations into stage-level constraints, then ask a motion planner to solve them. A smooth, reachable trajectory can still approach the wrong object, interact with the wrong region, or omit a necessary safety condition.</p><p>ReFlex introduces feedback between planning and execution. It connects observable trajectory symptoms to possible specification defects, organizes the evidence into a structured report, and guides a conservative revision of the current stage.</p><div class="spec-strip"><span>Stage goal</span><span class="math" data-tex="g_i">gᵢ</span><span class="strip-plus">+</span><span>Path requirements</span><span class="math" data-tex="h_i">hᵢ</span><span class="strip-arrow">→</span><span>Candidate motion</span></div></div></div>
+    </section>
+
+    <section class="container section-pad" id="method" aria-labelledby="method-heading">
+      <div class="section-heading"><div><p class="eyebrow">The ReFlex feedback loop</p><h2 id="method-heading">From a motion symptom<br>to a constraint revision.</h2></div><p class="heading-description">ReKep generates and solves constraints. ReFlex checks the candidate and returns feedback to the constraint generator.</p></div>
+      <div class="method-diagram" role="img" aria-label="ReKep observes a scene, generates constraints and plans a candidate. ReFlex detects symptoms, produces structured evidence and attribution, and requests local constraint repair. Revised constraints are replanned and checked again before execution.">
+        <div class="pipeline-caption"><span class="pipeline-dot"></span> ReKep · Constraint-driven planning</div>
+        <div class="pipeline"><div class="pipeline-node"><span class="node-number">01</span><strong>Observe</strong><small>Instruction &amp; keypoints</small></div><span class="flow-arrow" aria-hidden="true">→</span><div class="pipeline-node"><span class="node-number">02</span><strong>Generate constraints</strong><small>Subgoal + path</small></div><span class="flow-arrow" aria-hidden="true">→</span><div class="pipeline-node"><span class="node-number">03</span><strong>Plan a candidate</strong><small>Constraint solver</small></div></div>
+        <div class="connection-line" aria-hidden="true"><svg viewBox="0 0 1000 60" preserveAspectRatio="none"><defs><marker id="feedback-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10" fill="none" stroke="#b6553c" stroke-width="1.4"/></marker></defs><path d="M165 60V20H500V1" fill="none" stroke="#cfa08c" stroke-width="1.2" marker-end="url(#feedback-arrow)"/><path d="M835 0V59" fill="none" stroke="#cfa08c" stroke-width="1.2" marker-end="url(#feedback-arrow)"/></svg><span>Return to constraint generation</span><span>Check before execution</span></div>
+        <div class="reflex-track"><div class="pipeline-caption"><span class="pipeline-dot"></span> ReFlex · Structured feedback</div><div class="pipeline"><div class="pipeline-node"><span class="node-number">06</span><strong>Local repair prompt</strong><small>Modify / preserve</small></div><span class="flow-arrow" aria-hidden="true">←</span><div class="pipeline-node"><span class="node-number">05</span><strong>Report &amp; attribute</strong><small>RERS-v1 evidence</small></div><span class="flow-arrow" aria-hidden="true">←</span><div class="pipeline-node"><span class="node-number">04</span><strong>Detect symptoms</strong><small>Semantics, progress, safety</small></div></div></div>
+        <div class="execution-gate"><span class="status-dot"></span><strong>Replan → Re-check → Execute</strong><span>Every revised candidate is checked again.</span></div>
+      </div>
+      <div class="method-points"><article><span>01 / Evidence</span><h3>Make the symptom explicit.</h3><p>Record the relevant time window, feature values and detection rule in a structured report.</p></article><article><span>02 / Attribution</span><h3>Inspect the specification.</h3><p>Use symptoms and task context to identify candidate defects in subgoal or path constraints.</p></article><article><span>03 / Preservation</span><h3>Keep correct requirements.</h3><p>Revise the failed stage while protecting valid object references, poses and unrelated stages.</p></article></div>
+    </section>
+
+    <section class="taxonomy section-pad" aria-labelledby="taxonomy-heading"><div class="container"><p class="eyebrow">Five representative symptoms</p><h2 id="taxonomy-heading">What can go wrong?</h2><div class="taxonomy-grid">
+      <button class="taxonomy-card" data-open-case="object"><span class="case-number">01</span><span class="category">Semantic consistency</span><strong>Wrong object.</strong><span>The grasp reference points to the pear instead of the apple.</span><span class="card-link">Inspect object binding ↗</span></button>
+      <button class="taxonomy-card" data-open-case="region"><span class="case-number">02</span><span class="category">Semantic consistency</span><strong>Wrong region.</strong><span>The spatula is correct, but its blade replaces the intended handle.</span><span class="card-link">Inspect functional region ↗</span></button>
+      <button class="taxonomy-card" data-open-case="direction"><span class="case-number">03</span><span class="category">Target approach</span><strong>Wrong direction.</strong><span>The same button target is approached horizontally instead of from above.</span><span class="card-link">Inspect approach direction ↗</span></button>
+      <button class="taxonomy-card" data-open-case="progress"><span class="case-number">04</span><span class="category">Target approach</span><strong>No effective progress.</strong><span>The apple moves locally without completing the transport stage.</span><span class="card-link">Inspect progress stagnation ↗</span></button>
+      <button class="taxonomy-card" data-open-case="collision"><span class="case-number">05</span><span class="category">Physical execution risk</span><strong>Unsafe path.</strong><span>A low transport route brings the carried apple toward the barrier.</span><span class="card-link">Inspect collision risk ↗</span></button>
+    </div></div></section>
+
+    <section class="container section-pad" aria-labelledby="progress-heading"><div class="evidence-grid"><div><p class="eyebrow">Look beyond a single frame</p><h2 id="progress-heading">Motion is not<br>always progress.</h2><p>The two Scene A references share the same grasp and lift. During transport, one reaches the placement reference; the other oscillates locally and stops short.</p><p class="muted">The distance is computed from the authored TCP samples. Holds after arrival are normal; waits and necessary detours must be interpreted within the stage context.</p><button class="text-link inline-button" data-open-case="progress">Watch the transport comparison <span aria-hidden="true">↗</span></button></div><figure class="progress-figure"><img src="assets/images/mujoco_progress_distance.png" width="1518" height="363" loading="lazy" alt="TCP distance to the placement goal over scripted playback time. The correct reference decreases to approximately zero, while the stagnating reference remains about 19 centimetres from the goal."><figcaption>Two authored references, not evaluation averages or confidence intervals.</figcaption><div class="data-links"><a href="assets/data/mujoco_progress_correct.csv" download>Correct-reference data ↓</a><a href="assets/data/mujoco_progress_wrong.csv" download>Incorrect-reference data ↓</a></div></figure></div></section>
+
+    <section class="placement-section section-pad"><div class="container placement-grid"><figure><img src="assets/images/collision-released.png" width="1600" height="1000" loading="lazy" alt="The Panda gripper is open above an apple resting on the green plate after transport around the barrier."><figcaption>Scene D · Final state of the correct scripted reference.</figcaption></figure><div><p class="eyebrow">Complete the operation</p><h2>Reach. Place.<br>Release.</h2><p>The correct Scene D reference lifts the apple above the barrier, lowers it onto the plate, opens the gripper and retreats. Safety applies to the robot and the carried object throughout transport.</p><p class="muted">The incorrect playback stops before contact. Its dashed continuation shows the unplayed hazardous candidate route.</p><div class="stage-pills"><span>Safe transport</span><span>Placement</span><span>Release &amp; retreat</span></div><button class="text-link inline-button" data-open-case="collision">Watch the complete reference <span aria-hidden="true">↗</span></button></div></div></section>
+
+    <section class="container section-pad resources" id="resources" aria-labelledby="resources-heading"><div class="section-heading"><div><p class="eyebrow">Read &amp; reproduce</p><h2 id="resources-heading">Project materials.</h2></div><p class="heading-description">The project page is in English. The current manuscript is a Chinese draft; quantitative evaluation is still in preparation.</p></div><div class="resource-grid"><a class="resource-card" data-paper-link href="assets/paper/reflex-manuscript-zh.pdf" target="_blank" rel="noopener"><span>01 / Manuscript</span><strong>Read the paper <span aria-hidden="true">↗</span></strong><p>Framework, five paired cases, and stage-level constraint equations.</p><small>Current draft · Chinese PDF</small></a><a class="resource-card" href="assets/constraint-notes.md" download><span>02 / Specifications</span><strong>Constraint notes <span aria-hidden="true">↓</span></strong><p>English notation and correct / incorrect subgoal and path bundles.</p><small>Manually authored examples · Markdown</small></a><a class="resource-card" href="assets/data/media-manifest.json" download><span>03 / Provenance</span><strong>Media manifest <span aria-hidden="true">↓</span></strong><p>Source videos, hashes, poster timestamps and demonstration status.</p><small>Scripted qualitative illustrations · JSON</small></a></div>
+      <details class="citation"><summary>Citation <span>Manuscript in preparation</span><span aria-hidden="true">+</span></summary><div class="citation-body"><div class="citation-toolbar"><span>BibTeX · Provisional manuscript entry</span><button id="copy-citation" type="button">Copy BibTeX</button></div><pre id="bibtex">@misc{reflex,
+  title = {ReFlex: Feedback-Enhanced Constraint Repair for ReKep Motion Planning},
+  author = {Wang, Shaoyi},
+  note = {Research manuscript in preparation}
+}</pre><p id="copy-status" role="status" aria-live="polite"></p></div></details>
+    </section>
+  </main>
+  <footer><div class="container footer-main"><a class="wordmark" href="#main">ReFlex<span class="brand-dot"></span></a><p>Feedback at the constraint interface.</p><a href="#main" class="text-link">Back to top ↑</a></div><div class="container footer-notes"><p>Built on the ideas of <a href="https://rekep-robot.github.io/" target="_blank" rel="noopener">ReKep</a>. Demonstrations use <a href="https://mujoco.org/" target="_blank" rel="noopener">MuJoCo</a>, the Panda model from <a href="https://github.com/google-deepmind/mujoco_menagerie" target="_blank" rel="noopener">MuJoCo Menagerie</a>, and <a href="https://ycb-benchmarks.s3.amazonaws.com/index.html" target="_blank" rel="noopener">YCB object assets</a>.</p><p>These illustrations explain specification differences. They do not establish automatic repair performance or physical grasp stability. <a href="THIRD_PARTY_NOTICES.md">Asset credits</a>.</p></div></footer>
+</body>
+</html>

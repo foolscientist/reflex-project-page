@@ -1,0 +1,97 @@
+{
+  "data_status": "scripted_qualitative_illustration",
+  "runtime_planning": false,
+  "constraint_origin": "manually_written_specification_examples",
+  "media": [
+    {
+      "case": "object",
+      "side": "correct",
+      "source": "paper\\mujoco_demo\\outputs\\scene_a_pick_place\\object_binding\\videos\\correct.mp4",
+      "source_sha256": "2b5089648633b3b8330df91dc960ee64d3e94f054fe923a0351f26086c18430d",
+      "video_sha256": "6a372d9247deebda021916c66e4cfe320d9f99fdbb2a730fe7a8ac50a8a9bfa5",
+      "poster_time_s": 5.5,
+      "poster_sha256": "c5cc3d96a9b47af5c47b36b8b6fba4aff4c99aa2e0840d4ea566fcac7e5ff46a"
+    },
+    {
+      "case": "object",
+      "side": "wrong",
+      "source": "paper\\mujoco_demo\\outputs\\scene_a_pick_place\\object_binding\\videos\\wrong.mp4",
+      "source_sha256": "284a8c0fb90e8090e4057677cf9f18c5df58e13aa3a889b2b7c3068387b4145a",
+      "video_sha256": "ee51f3ff1e58ea937155abe95acd5dbc9f70cc20df83cfd2a7e365b9b983073e",
+      "poster_time_s": 5.5,
+      "poster_sha256": "cc90e987419efe6ffeff7dc9ab3fbb458eecfe0a743c1f5debfc44e4b425a98a"
+    },
+    {
+      "case": "region",
+      "side": "correct",
+      "source": "paper\\mujoco_demo\\outputs\\scene_b_functional_region\\keypoint_binding\\videos\\correct.mp4",
+      "source_sha256": "5d6b405ba282ee7a6f4faf7e56e23911790cb8a23b541be66b84e50b056d400d",
+      "video_sha256": "a2898c877df033c088d6e3006edcb5aca07770072e586fe017ac23b07fa48e9b",
+      "poster_time_s": 6.2,
+      "poster_sha256": "95dc332f598a726fd1098d340a2e2828ea06db8b6acb313cc6d709fb32decbf0"
+    },
+    {
+      "case": "region",
+      "side": "wrong",
+      "source": "paper\\mujoco_demo\\outputs\\scene_b_functional_region\\keypoint_binding\\videos\\wrong.mp4",
+      "source_sha256": "3b72c9bd04e26eee88948fb103579f83140d3a982878304335f7ab1c169fe2b0",
+      "video_sha256": "10b55f0f6af70dc5625fdb48f63d2d44000843e421678870ebab38696041b352",
+      "poster_time_s": 6.2,
+      "poster_sha256": "1d3ad490001016fc1035d339769ee71da598ccdc3d91b3125a1922ad6ac0e7b8"
+    },
+    {
+      "case": "direction",
+      "side": "correct",
+      "source": "paper\\mujoco_demo\\outputs\\scene_c_top_down_approach\\approach_direction\\videos\\correct_detail.mp4",
+      "source_sha256": "1ddbb5c2da8f407bb36247f0e2051ee16297497f99d041f6e5b43c928343b02e",
+      "video_sha256": "e95fa7f91db29578eb210942092399efd36e098602579218026c846b9eae684e",
+      "poster_time_s": 3.0,
+      "poster_sha256": "b08bc790823c83f4359abcd4ff5fe24d2dbf6769a171109887c92b96b31f4751"
+    },
+    {
+      "case": "direction",
+      "side": "wrong",
+      "source": "paper\\mujoco_demo\\outputs\\scene_c_top_down_approach\\approach_direction\\videos\\wrong_detail.mp4",
+      "source_sha256": "ccdbb29097f9fcdcf1ac9561e5d9d8605d009f8ee7293043239eb18f21021425",
+      "video_sha256": "71ba9297c9614c55bdb3f479671627395a4defacea24b6451afa7768b19f1465",
+      "poster_time_s": 3.0,
+      "poster_sha256": "9a113a146d87cc9167b166711be50ddc6da598fcb0e636127119275749272bcd"
+    },
+    {
+      "case": "progress",
+      "side": "correct",
+      "source": "paper\\mujoco_demo\\outputs\\scene_a_pick_place\\progress_stagnation\\videos\\correct.mp4",
+      "source_sha256": "4be059bf38eab0f378277ecb25333cf723a02a8f01b6f010dbc8df752b1d57ba",
+      "video_sha256": "37afae78795421370e16c476ab69464741621a224892de6848999d41331d3deb",
+      "poster_time_s": 11.0,
+      "poster_sha256": "bfe900a340b6481fc65b8304de6a2a5b2863193f3c5332f55fb83827435ae0de"
+    },
+    {
+      "case": "progress",
+      "side": "wrong",
+      "source": "paper\\mujoco_demo\\outputs\\scene_a_pick_place\\progress_stagnation\\videos\\wrong.mp4",
+      "source_sha256": "cfa6d3e887086d090e8f7df31723c9171556e76de53553d8eb7c363a9e11f7e7",
+      "video_sha256": "6450e0b739119282e1e9f15ef1901f684c7486ec136d2d9818a9b668b98878b7",
+      "poster_time_s": 11.0,
+      "poster_sha256": "28b913ed881fc178f496613fc6c0e016a581c7ac722c20b88306e1fb8692ede4"
+    },
+    {
+      "case": "collision",
+      "side": "correct",
+      "source": "paper\\mujoco_demo\\outputs\\scene_d_obstacle_avoidance\\collision_risk\\videos\\correct_detail.mp4",
+      "source_sha256": "6b6302d3f57fc8ddca760b3392f9645e1a6f287fac7e9a2a28ae6b44daa076b9",
+      "video_sha256": "7138884792f8795a8963ae150f45a5839abd3d06c8499878a491c217494ad122",
+      "poster_time_s": 9.0,
+      "poster_sha256": "4b33660548d49d0945f7c9799c2d159502c692c6d19375c07c893ddb9e72e88e"
+    },
+    {
+      "case": "collision",
+      "side": "wrong",
+      "source": "paper\\mujoco_demo\\outputs\\scene_d_obstacle_avoidance\\collision_risk\\videos\\wrong_detail.mp4",
+      "source_sha256": "50e135daaeea0014e5e4be9e86e57c031307d441fd1c19a03edc86c4d258fc1d",
+      "video_sha256": "0c4559c2366ad431b40ce489603b9e9a0a102c4ced019b235c6c9f04445c4781",
+      "poster_time_s": 9.0,
+      "poster_sha256": "1b06a617583c8bf1f0ef045c5bcd3041215325e768a8cd76bad84c7d6a09887f"
+    }
+  ]
+}
