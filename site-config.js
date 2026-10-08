@@ -2,7 +2,7 @@
 // Empty links are omitted. GitHub Pages project sites infer their repository.
 window.REFLEX_SITE = {
   authors: "Shaoyi Wang",
-  affiliation: "Haerbin Institute of Technology",
+  affiliation: "Harbin Institute of Technology",
   codeUrl: "",
   paperUrl: "assets/paper/reflex-manuscript-zh.pdf",
   paperLabel: "Manuscript · Chinese draft",

@@ -54,6 +54,8 @@ def main():
     shutil.copy2(ROOT / "experiments/figures/mujoco_case_panels/collision_released.png",
                  ASSETS / "images/collision-released.png")
     shutil.copy2(ROOT / "paper/main.pdf", ASSETS / "paper/reflex-manuscript-zh.pdf")
+    shutil.copy2(ROOT / "paper/figures/reflex_overall_framework.png",
+                 ASSETS / "images/reflex-overall-framework.png")
     (ASSETS / "data/media-manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     print("Prepared manuscript, progress data and media provenance.")
 

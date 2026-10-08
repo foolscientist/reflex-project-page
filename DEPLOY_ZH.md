@@ -46,14 +46,15 @@ git push -u origin main
 
 替换命令中的用户名；按照 Git 的提示登录，然后按上面的 Pages 设置发布。
 这些命令用于尚未初始化 Git 的主页目录；如果已经设置过仓库，后续只需 `git add .`、`git commit` 和 `git push`。
-本次交付没有执行 Git 初始化、上传或公开发布。
+当前主页仓库为 `https://github.com/foolscientist/reflex-project-page`，网站地址为
+`https://foolscientist.github.io/reflex-project-page/`。本目录已关联该仓库；后续更新无需重新初始化或添加远端。
 
 ## 正式署名与链接
 
 修改 `site-config.js`：
 
 - `authors`：当前为 `Shaoyi Wang`。
-- `affiliation`：当前按提供的拼写填写 `Haerbin Institute of Technology`；留空时不显示。
+- `affiliation`：当前为 `Harbin Institute of Technology`；留空时不显示。
 - `codeUrl`：填写机器人代码仓库地址。留空时，GitHub Pages 自动指向主页所在仓库；本地预览不显示 Code 按钮。
 - `paperUrl`、`paperLabel`：当前文件是中文论文草稿，按钮已注明；英文论文完成后替换 PDF 和标签。
 - `citation`：当前使用上述作者的准备中稿件引用；论文公开后再补充发表信息。
