@@ -5,6 +5,6 @@ window.REFLEX_SITE = {
   affiliation: "Harbin Institute of Technology",
   codeUrl: "",
   paperUrl: "assets/paper/reflex-manuscript-zh.pdf",
-  paperLabel: "Manuscript · Chinese draft",
+  paperLabel: "Manuscript · Chinese",
   citation: "@misc{reflex,\n  title = {ReFlex: Feedback-Enhanced Constraint Repair for ReKep Motion Planning},\n  author = {Wang, Shaoyi},\n  note = {Research manuscript in preparation}\n}"
 };

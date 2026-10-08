@@ -56,7 +56,7 @@ git push -u origin main
 - `authors`：当前为 `Shaoyi Wang`。
 - `affiliation`：当前为 `Harbin Institute of Technology`；留空时不显示。
 - `codeUrl`：填写机器人代码仓库地址。留空时，GitHub Pages 自动指向主页所在仓库；本地预览不显示 Code 按钮。
-- `paperUrl`、`paperLabel`：当前文件是中文论文草稿，按钮已注明；英文论文完成后替换 PDF 和标签。
+- `paperUrl`、`paperLabel`：当前文件是中文论文，按钮已注明；英文论文完成后替换 PDF 和标签。
 - `citation`：当前使用上述作者的准备中稿件引用；论文公开后再补充发表信息。
 
 所有网页正文为英文。网页没有加入尚未实测的成功率，也没有把固定轨迹标成自动修复结果。

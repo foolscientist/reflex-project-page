@@ -36,7 +36,7 @@ Edit `site-config.js`:
 - `affiliation`: currently `Harbin Institute of Technology`.
 - `codeUrl`: the **research code** URL. If empty, GitHub Pages project sites
   automatically link to their hosting repository; local previews omit Code.
-- `paperUrl` / `paperLabel`: currently the included **Chinese draft** PDF.
+- `paperUrl` / `paperLabel`: currently the included **Chinese manuscript** PDF.
 - `citation`: a provisional entry with the supplied author, without an invented
   publication venue, arXiv identifier or publication date.
 
@@ -82,9 +82,9 @@ passwords or access tokens in website files or Git remotes.
 - Scene A transport ends with the apple still held. Scene D includes release.
 - Collision-risk playback stops before contact; the dashed continuation is unplayed.
 - Quantitative benchmark targets are intentionally absent from the website.
-- The included manuscript remains a Chinese draft with anticipated quantitative
-  tables explicitly labelled as drafts. The English website is not an English
-  translation of that PDF.
+- The included Chinese manuscript reports the authors' quantitative experimental
+  results. The English website is not an English translation of that PDF;
+  its authored MuJoCo references remain qualitative illustrations.
 
 Media provenance and hashes are in `assets/data/media-manifest.json`.
 Third-party credits and bundled library/font licenses are in
